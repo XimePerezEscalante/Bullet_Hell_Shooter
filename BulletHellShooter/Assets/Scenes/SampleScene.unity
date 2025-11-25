@@ -1608,6 +1608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 221773174497367843, guid: 98a8923e4af8646b28ec719cbaff57ce, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1454528143949150544, guid: 98a8923e4af8646b28ec719cbaff57ce, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -2627,6 +2631,7 @@ GameObject:
   - component: {fileID: 1984270680}
   - component: {fileID: 1984270682}
   - component: {fileID: 1984270681}
+  - component: {fileID: 1984270683}
   m_Layer: 0
   m_Name: Mermaid
   m_TagString: Player
@@ -2741,8 +2746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fcb71d7e22646e7a968b843fe749d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MermaidController
-  isAlive: 1
-  horizontalInput: 0
+  mermaid: {fileID: 1984270683}
 --- !u!136 &1984270681
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2793,6 +2797,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1984270683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984270676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179374e535c504972ab2fdd8505d6187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mermaid
+  bullet: {fileID: 22220393206128481, guid: 98a8923e4af8646b28ec719cbaff57ce, type: 3}
+  isAlive: 1
+  horizontalInput: 0
+  audioSystem: {fileID: 1148681176}
+  health: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

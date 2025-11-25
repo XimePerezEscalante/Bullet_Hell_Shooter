@@ -1,8 +1,12 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Mermaid : MonoBehaviour
 {
-    public float speed;
+    public GameObject bullet;
+    public bool isAlive = true;
+    public float horizontalInput;
+    public AudioSystem audioSystem;
+    public float health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

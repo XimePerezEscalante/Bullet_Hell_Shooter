@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BulletController : MonoBehaviour
 {
+    GameObject bullet;
     private Animator animator;
     public bool isLerping = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +36,7 @@ public class BulletController : MonoBehaviour
         }
         
     }
+
     private IEnumerator NormalAttackPlayer()
     {
         transform.position = new Vector3(1.3f,5f,0);
@@ -51,19 +53,30 @@ public class BulletController : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+
+        DestroyBullet();
+        //StartCoroutine(DestroyBullet());
+    }
+
+    /*private IEnumerator DestroyBullet()
+    {
         isLerping = false;
         animator.SetTrigger("madeContact");
         yield return new WaitForSeconds(1);
         Debug.Log("Destroyed bullet");
         Destroy(gameObject);
-        //StartCoroutine(DestroyBullet());
     }
+    */
 
-    private IEnumerator DestroyBullet()
+    private void StopBullet()
     {
+        Debug.Log("Stopping bullet");
         isLerping = false;
         animator.SetTrigger("madeContact");
-        yield return new WaitForSeconds(1);
+    }
+
+    private void DestroyBullet()
+    {
         Debug.Log("Destroyed bullet");
         Destroy(gameObject);
     }
@@ -72,9 +85,11 @@ public class BulletController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(DestroyBullet());
+            //StartCoroutine(DestroyBullet());
+            StopBullet();
             Debug.Log("Shot Player");
-            other.GetComponent<MermaidController>().isAlive = false;
+            other.GetComponent<MermaidController>().mermaid.isAlive = false;
+            other.GetComponent<MermaidController>().ReceiveDamage();
         }
     }
 }
