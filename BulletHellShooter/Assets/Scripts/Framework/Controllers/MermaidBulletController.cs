@@ -18,6 +18,7 @@ public class MermaidBulletController : MonoBehaviour
 
     public IEnumerator Attack(Vector3 currentPosition, Vector3 targetPosition)
     {
+        BulletManager.mermaidBulletCount += 1;
         transform.position = new Vector3(currentPosition.x,currentPosition.y + 2f, currentPosition.z);
 
         float timeElapsed = 0;
@@ -34,6 +35,7 @@ public class MermaidBulletController : MonoBehaviour
 
     private void DestroyMermaidBullet()
     {
+        BulletManager.mermaidBulletCount -= 1;
         animator.SetTrigger("madeContact");
         Debug.Log("Destroyed bullet");
         Destroy(gameObject);
