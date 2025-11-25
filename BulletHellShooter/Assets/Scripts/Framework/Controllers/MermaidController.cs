@@ -14,12 +14,14 @@ public class MermaidController : MonoBehaviour
     void Update()
     {
         mermaid.horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * mermaid.horizontalInput);
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? mermaid.slowSpeed : mermaid.normalSpeed;
+        transform.Translate(Vector3.right * Time.deltaTime * mermaid.horizontalInput * currentSpeed);
 
         if (Input.GetKey(KeyCode.C))
         {
             Shoot();
         }
+        
     }
 
     public void Shoot()
@@ -40,8 +42,8 @@ public class MermaidController : MonoBehaviour
         }
         else
         {
+            mermaid.isAlive = false;
             Debug.Log("Game Over");
         }
-        
     }
 }

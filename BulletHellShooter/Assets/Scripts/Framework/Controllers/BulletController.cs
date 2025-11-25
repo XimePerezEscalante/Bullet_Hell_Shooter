@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
     GameObject bullet;
     private Animator animator;
     public bool isLerping = false;
+    public int move;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,7 +30,7 @@ public class BulletController : MonoBehaviour
     }
     private void TimeCheck()
     {
-        if(TimeManager.Second == 10)
+        if(TimeManager.Second == move)//10)
         {
             isLerping = true;
             StartCoroutine(NormalAttackPlayer());
@@ -39,7 +40,7 @@ public class BulletController : MonoBehaviour
 
     private IEnumerator NormalAttackPlayer()
     {
-        transform.position = new Vector3(1.3f,5f,0);
+        //transform.position = new Vector3(1.3f,5f,0);
         // targetPos debe ser la posicion actual de mermaid
         Vector3 targetPos = new Vector3(1.3f,-4.2f,0);
 
