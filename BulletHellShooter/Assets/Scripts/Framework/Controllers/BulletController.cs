@@ -51,7 +51,12 @@ public class BulletController : MonoBehaviour
             timeElapsed += Time.deltaTime;
             yield return null;
         }
-        StartCoroutine(DestroyBullet());
+        isLerping = false;
+        animator.SetTrigger("madeContact");
+        yield return new WaitForSeconds(1);
+        Debug.Log("Destroyed bullet");
+        Destroy(gameObject);
+        //StartCoroutine(DestroyBullet());
     }
 
     private IEnumerator DestroyBullet()
