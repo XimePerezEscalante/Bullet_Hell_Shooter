@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 489309007991404984}
   - component: {fileID: 221773174497367843}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: MermaidBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22220393206128481}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4864a1fd519e34a6b9914a0db2dbeec1, type: 2}
   m_CullingMode: 0
@@ -178,4 +178,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b66806d6f534154a0601fb6db98bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MermaidBulletController
-  bullet: {fileID: 0}

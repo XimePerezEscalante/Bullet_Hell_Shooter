@@ -27,6 +27,7 @@ public class MermaidController : MonoBehaviour
         Vector3 spawnPosition = transform.position;
         Quaternion spawnRotation = Quaternion.Euler(0, 0, 90);
         GameObject bulletInstance = Instantiate(mermaid.bullet, spawnPosition, spawnRotation);
+        //mermaid.audioSystem.PlaySFX(mermaid.audioSystem.shoot);
         bulletInstance.GetComponent<MermaidBulletController>().TriggerAttack(spawnPosition, new Vector3(spawnPosition.x, 6.3f, 0));
     }
 
