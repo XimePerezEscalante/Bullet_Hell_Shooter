@@ -16,19 +16,19 @@ public class GorgonBulletController : MonoBehaviour
     void Start()
     {
         bullet.isAttacking = true;
-        if (TimeManager.Second <= 36)
+        StartCoroutine(LinearAttack());
+        /*if (TimeManager.Minute == 0 && TimeManager.Second >= 6 && TimeManager.Second <= 36)
         {
             if (bullet.Type == 0) {
                 StartCoroutine(LinearAttack());
             }
         }
-        //else if (TimeManager.Second >= 37 && TimeManager.Minute <= 1 && TimeManager.Second <= 6)
-        else
+        if (TimeManager.Minute == 0 && TimeManager.Second >= 37 && TimeManager.Second <= 59)
         {
             if (bullet.Type == 1) {
-                StartCoroutine(NewAttack());
+                StartCoroutine(CircularAttack());
             }
-        }
+        }*/
     }
 
     void Update()
@@ -65,11 +65,13 @@ public class GorgonBulletController : MonoBehaviour
         // Disminuir contador de balas del jefe
         BulletManager.ChangeGorgonBulletCount(false);
     }
-
-    public IEnumerator NewAttack()
+    /// <summary>
+    /// This method is called when the bullet type equals 1.
+    /// </summary>
+    public IEnumerator CircularAttack()
     {
         float currentAngle = 0f;
-        float timer = 5;
+        float timer = 8;
         float radius = 2f;
 
 
