@@ -4,7 +4,9 @@ using System.Collections;
 public class MermaidBulletController : MonoBehaviour
 {
     private Animator animator;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// <summary>
+    /// This method is called before the first frame update
+    /// </summary>
     void Start()
     {
         animator = GetComponent<Animator>();

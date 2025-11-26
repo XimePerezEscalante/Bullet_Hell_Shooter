@@ -1,27 +1,22 @@
 using UnityEngine;
-
+/// <summary>
+/// This mermaid model class contains all the attributes for the player.
+/// Standar coding documentation can be found in 
+/// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
+/// </summary>
 public class Mermaid : MonoBehaviour
 {
+    // Sistema de audio para reproducir SFX
     public AudioSystem audioSystem;
+    // Prefab de bala para disparar
     public GameObject bullet;
-    public GameObject Life1;
-    public GameObject Life2;
-    public GameObject Life3;
+    // Vida total
     public float health;
-    public bool isAlive = true;
+    // Sigue viva
+    public bool IsAlive;
+    // Input para movimiento
     public float horizontalInput;
     public float normalSpeed;
     public float slowSpeed;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+

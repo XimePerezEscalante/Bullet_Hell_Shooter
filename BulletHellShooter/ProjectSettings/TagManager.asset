@@ -8,6 +8,7 @@ TagManager:
   - Life1
   - Life2
   - Life3
+  - MermaidBullet
   layers:
   - Default
   - TransparentFX

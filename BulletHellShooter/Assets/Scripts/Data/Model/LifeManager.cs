@@ -1,21 +1,24 @@
 using UnityEngine;
-
+/// <summary>
+/// This life manager class updates the corresponding heart depending on the player's health.
+/// Standar coding documentation can be found in 
+/// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
+/// </summary>
 public class LifeManager : MonoBehaviour
 {
+    // Arreglo con los tres corazones
     public GameObject[] Life;
+    // Animator para cambiar las animaciones
     private static Animator animator;
+    // Objeto sirena para obtener su vida
     public Mermaid mermaid;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        //animator = Life.GetComponent<Animator>();
-
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// This method is called once per frame
+    /// </summary>
     void Update()
     {
+        // El indice corresponde a la ubicacion visual del corazon
         if (mermaid.health == 2.5) {
             animator = Life[2].GetComponent<Animator>();
             animator.SetTrigger("Half");
@@ -40,46 +43,5 @@ public class LifeManager : MonoBehaviour
         {
             Destroy(Life[0].gameObject);
         }
-    }
-
-    public void DecreaseHealth(bool empty)
-    {
-        /*if (health == 2.5f)
-        {
-            animatorLife3.SetTrigger("Half");
-        }
-        else if (health == 2)
-        {
-            animatorLife3.SetTrigger("Empty");
-            Destroy(gameObject.Life3);
-        }
-        else if (health == 1.5f)
-        {
-            animatorLife2.SetTrigger("Half");
-        }
-        else if (health == 1)
-        {
-            animatorLife2.SetTrigger("Empty");
-            Destroy(gameObject.Life2);
-        }
-        else if (health == 0.5f)
-        {
-            animatorLife1.SetTrigger("Half");
-        }
-        else if (health == 0)
-        {
-            animatorLife1.SetTrigger("Empty");
-            Destroy(gameObject.Life1);
-        }*/
-        /*if (!empty)
-        {
-            animator.SetTrigger("Half");
-        }
-        else
-        {
-            Debug.Log("Destroying game object");
-            animator.SetTrigger("Empty");
-            //Destroy(gameObject);
-        }*/
     }
 }

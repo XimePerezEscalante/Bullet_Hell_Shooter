@@ -28,6 +28,7 @@ public class BulletController : MonoBehaviour
     {
         TimeManager.OnMinuteChanged -= TimeCheck;
     }
+
     private void TimeCheck()
     {
         if(TimeManager.Second == move)//10)
@@ -38,7 +39,7 @@ public class BulletController : MonoBehaviour
         
     }
 
-    private IEnumerator NormalAttackPlayer()
+    public IEnumerator NormalAttackPlayer()
     {
         //transform.position = new Vector3(1.3f,5f,0);
         // targetPos debe ser la posicion actual de mermaid
@@ -89,7 +90,6 @@ public class BulletController : MonoBehaviour
             //StartCoroutine(DestroyBullet());
             StopBullet();
             Debug.Log("Shot Player");
-            other.GetComponent<MermaidController>().mermaid.isAlive = false;
             other.GetComponent<MermaidController>().ReceiveDamage();
         }
     }

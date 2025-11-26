@@ -13,13 +13,13 @@ public class BulletManager : MonoBehaviour
     void Start()
     {
         mermaidBulletCount = 0;
-        mermaidBulletCount = 0;
+        gorgonBulletCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Mermaid Bullet Count" + mermaidBulletCount);
+        //Debug.Log("Mermaid Bullet Count" + mermaidBulletCount);
     }
 
     public static void ChangeMermaidBulletCount(bool increase)
@@ -45,6 +45,6 @@ public class BulletManager : MonoBehaviour
             gorgonBulletCount -= 1;
         }
 
-        OnChangedMermaidBulletCount.Invoke();
+        OnChangedGorgonBulletCount.Invoke();
     }
 }

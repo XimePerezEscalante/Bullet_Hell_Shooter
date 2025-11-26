@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6166110833943282042}
   - component: {fileID: 4400125108285358480}
   - component: {fileID: 6349446670219769139}
+  - component: {fileID: -7230468742361126451}
+  - component: {fileID: -5686412844509642319}
   m_Layer: 0
   m_Name: GorgonBullet
   m_TagString: Untagged
@@ -113,10 +115,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.030077327
-  m_Height: 0.18814875
+  m_Radius: 0.043034263
+  m_Height: 0.2137538
   m_Direction: 0
-  m_Center: {x: 5.9264315e-18, y: 0.00237016, z: 0}
+  m_Center: {x: -0.002622588, y: 0.00051913655, z: 0}
 --- !u!54 &6166110833943282042
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,10 +175,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2722243692007362962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a60a828566c4b8787b06013bf234bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletController
   isLerping: 0
   move: 5
+--- !u!114 &-7230468742361126451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722243692007362962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ea00409dfae436bae115c5cfaaae70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GorgonBulletController
+  bullet: {fileID: -5686412844509642319}
+--- !u!114 &-5686412844509642319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722243692007362962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72482a7c89d424351b9ee998f3e64d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  bulletPrefab: {fileID: 2722243692007362962}
+  speed: 2
+  rotation: {x: 0, y: 0, z: 0.70710677, w: -0.70710677}
+  fireRate: 2
+  isAttacking: 0
